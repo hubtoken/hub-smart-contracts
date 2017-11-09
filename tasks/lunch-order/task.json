@@ -1,0 +1,6 @@
+{
+    "taskname": "LunchOrder",
+    "description": "Ask someone to pick up your lunch",
+    "html_form": "lunch.html",
+    "smart_contract": "lunch.sol"
+}
