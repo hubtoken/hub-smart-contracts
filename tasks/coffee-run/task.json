@@ -1,0 +1,6 @@
+{
+    "taskname": "CoffeeRun",
+    "description": "Ask someone to get you a coffee",
+    "html_form": "coffee.html",
+    "smart_contract": "coffee.sol"
+}
