@@ -6,7 +6,7 @@ contract LunchOrder
     uint requestor_stake;
     uint requestor_bounty;
     uint requestor_loan;
-    uint requestor_terms;
+    string requestor_terms;
 
     address runner;
     uint runner_stake;
@@ -29,7 +29,7 @@ contract LunchOrder
     function acceptOrder(uint stake) public          
     {
         runner = msg.sender;
-        runner_stake = stake
+        runner_stake = stake;
     }
     
     function acceptDelivery() public
