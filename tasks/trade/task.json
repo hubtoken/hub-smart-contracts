@@ -1,0 +1,6 @@
+{
+    "taskname": "Trade",
+    "description": "Make an offer",
+    "html_form": "trade.html",
+    "smart_contract": "trade.sol"
+}
