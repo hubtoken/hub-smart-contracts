@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-import "../token/hub_token.sol";
+//import "browser/HubToken.sol";
 
 contract Trade {
     
@@ -8,7 +8,7 @@ contract Trade {
     
     struct Offer {
         uint stake;
-        bytes32 message;
+        bytes32 description;
     }
     
     mapping (address => Offer) public offers;
@@ -16,25 +16,28 @@ contract Trade {
     /* can't iterate over a mapping. storing user addresses in an array */
     address[] public users;
     
-    function makeOffer(address user, uint256 stake, bytes32 message) public {
+    function makeOffer(address user, uint256 stake, bytes32 description) public {
         users.push(user);
         offers[user].stake = stake;
-        offers[user].message = message;
+        offers[user].description = description;
         
         /* hold the tokens in the contract till close */
-        transferTokens(user, this, stake);  
+        //transferTokens(user, this, stake);  
     }
     
-    function close() public {
+    function close() pure public {
+        /*
         for (uint i=0; i<users.length; i++) {
             address user = users[i];
             uint stake = offers[user].stake;
             transferTokens(this, user, stake);
-        }
+        }*/
     }
     
+    /*
     function transferTokens(address from, address to, uint value) private {
         HubToken hubToken = HubToken(hubTokenAddress);
         hubToken.transfer(from, to, value);
     }
+    */
 }
