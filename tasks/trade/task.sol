@@ -49,7 +49,7 @@ contract Trade {
         offers[user].stake = stake;
     }
     
-    function close() public {
+    function close() public atStage(Stages.AcceptingOffers) {
         for (uint i=0; i<users.length; i++) {
             address user = users[i];
             uint stake = offers[user].stake;
